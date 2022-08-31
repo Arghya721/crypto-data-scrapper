@@ -50,6 +50,5 @@ app.get("/top-coin-details", async (req, res) => {
   res.json(topCoinDetails.data);
 });
 
-app.listen(process.env.PORT || 5000, () => { console.log("Server started") });
 
 module.exports.handler = serverless(app);
