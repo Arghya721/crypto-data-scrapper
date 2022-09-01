@@ -45,7 +45,7 @@ app.get("/top-losers-gainers", async (req, res) => {
 
 app.get("/top-coin-details", async (req, res) => {
   const topCoinDetails = await axios.get(
-    "http://localhost:53055/top-coin-details"
+    "https://2rfg9wm3ic.execute-api.us-east-1.amazonaws.com/app"
   );
   res.json(topCoinDetails.data);
 });
