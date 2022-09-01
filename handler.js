@@ -47,8 +47,11 @@ app.get("/top-coin-details", async (req, res) => {
   const topCoinDetails = await axios.get(
     "https://2rfg9wm3ic.execute-api.us-east-1.amazonaws.com/app"
   );
-  res.json(topCoinDetails.data);
+  res.json(topCoinDetails.data.Data);
 });
 
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});
 
 module.exports.handler = serverless(app);
