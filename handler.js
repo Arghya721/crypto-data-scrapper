@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { newsUsecase } = require("./crypto_update/usecase/news/news_usecase");
 const {
   coinListUsecase,
@@ -12,6 +13,7 @@ const serverless = require("serverless-http");
 const express = require("express");
 const app = express();
 const axios = require("axios");
+
 
 app.get("/", (req, res, next) => {
   return res.status(200).json({
@@ -45,7 +47,7 @@ app.get("/top-losers-gainers", async (req, res) => {
 
 app.get("/top-coin-details", async (req, res) => {
   const topCoinDetails = await axios.get(
-    "https://2rfg9wm3ic.execute-api.us-east-1.amazonaws.com/app"
+    `${process.env.CRYPTO_API_URL}`
   );
   res.json(topCoinDetails.data.Data);
 });
