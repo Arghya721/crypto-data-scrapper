@@ -13,7 +13,7 @@ const cryptoList = async () => {
     ]);
     top100Coin.forEach((response) => {
       const $ = cheerio.load(response.data);
-      $(".chakra-text.css-o2rp9n").each(function (i, elem) {
+      $(".chakra-text.css-rkws3").each(function (i, elem) {
         var coin = $(this).text();
         coin = coin.replace(" ", "-");
         coin = coin.replace(".", "-");
