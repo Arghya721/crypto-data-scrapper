@@ -4,9 +4,11 @@ frameworkVersion: '3'
 provider:
   name: aws
   runtime: nodejs14.x
+  timeout: 20
 
 functions:
   api:
     handler: handler.handler
     events:
       - httpApi: '*'
+    timeout: 20
