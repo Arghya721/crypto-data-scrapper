@@ -49,7 +49,7 @@ app.get("/top-coin-details", async (req, res) => {
   const topCoinDetails = await axios.get(
     `${process.env.CRYPTO_API_URL}`
   );
-  res.json(topCoinDetails.data.Data);
+  res.json(topCoinDetails.data["Data"]);
 });
 
 app.listen(3000, () => {
