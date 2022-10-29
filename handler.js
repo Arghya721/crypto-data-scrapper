@@ -49,11 +49,13 @@ app.get("/top-coin-details", async (req, res) => {
   const topCoinDetails = await axios.get(
     `${process.env.CRYPTO_API_URL}`
   );
-  res.json(topCoinDetails.data);
+  // convert to json
+  const topCoinDetailsJson = await topCoinDetails.data;
+  res.json(topCoinDetailsJson);
 });
 
-// app.listen(3000, () => {
-//   console.log("Server is running on port 3000");
-// });
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});
 
 module.exports.handler = serverless(app);
