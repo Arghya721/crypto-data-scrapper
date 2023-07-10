@@ -48,6 +48,11 @@ let topLosersGainersUsecaseError = {
     "message": "Error comming from top losers gainers usecase"
 }
 
+let coinNotFoundError = {
+    "code": "coinNotFoundError",
+    "message": "Coin not found"
+}
+
 module.exports = {
     bitcoinNewsError,
     coinDeskNewsError,
@@ -58,5 +63,6 @@ module.exports = {
     topCoinDetailsError,
     newsUsecaseError,
     coinListUsecaseError,
-    topLosersGainersUsecaseError
+    topLosersGainersUsecaseError,
+    coinNotFoundError
 }

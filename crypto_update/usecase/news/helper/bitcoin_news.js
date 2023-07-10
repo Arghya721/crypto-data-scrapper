@@ -5,14 +5,15 @@ const { bitcoinNewsError } = require("./../../../../domain/errors.js");
 
 const bitcoinNews = async () => {
   try {
-    const bitcoinNewsNavigation = await axios.get("https://news.bitcoin.com");
-    const bitcoinNewsNavigationHtml = bitcoinNewsNavigation.data;
-    const $ = cheerio.load(bitcoinNewsNavigationHtml);
+    const bitcoinNewsNavigation = await axios.get("https://api.news.bitcoin.com/wp-json/bcn/v1/posts?offset=0&per_page=20&exclude=278,341,177113");
+    const bitcoinNewsJSONData = bitcoinNewsNavigation.data;
     const news = new Set();
-    $(".story--medium__info").each(function (i, elem) {
-      var news_title = $(this).text().replace(/\n/g, "").trim();
-      var news_url = $(this).find("a").attr("href");
-      news.add(new News(news_title, news_url));
+    bitcoinNewsJSONData?.posts.forEach((element) => {
+      const newsObject = new News(
+        element.title, 
+        "https://news.bitcoin.com/" + element.slug,
+      )
+      news.add(newsObject);
     });
     return news;
   } catch (error) {

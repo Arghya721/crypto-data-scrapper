@@ -9,10 +9,12 @@ const {
 const {
   topCoinDetailsUsecase,
 } = require("./crypto_update/usecase/top_coin_details/top_coin_details_usecase");
+const {
+  coinDetailsUsecase,
+} = require("./crypto_update/usecase/coin_details/coin_details_usecase");
 const serverless = require("serverless-http");
 const express = require("express");
 const app = express();
-const axios = require("axios");
 
 
 app.get("/", (req, res, next) => {
@@ -45,13 +47,10 @@ app.get("/top-losers-gainers", async (req, res) => {
   res.json(topLosersGainers);
 });
 
-app.get("/top-coin-details", async (req, res) => {
-  const topCoinDetails = await axios.get(
-    `${process.env.CRYPTO_API_URL}`
-  );
-  // convert to json
-  const topCoinDetailsJson = await topCoinDetails.data;
-  res.json(topCoinDetailsJson);
+app.get("/currency/:coin" , async (req, res) => {
+  const coinName = req.params.coin;
+  const coinDetails = await coinDetailsUsecase(coinName);
+  res.json(coinDetails);
 });
 
 app.listen(3000, () => {

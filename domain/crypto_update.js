@@ -37,7 +37,7 @@ class News {
 }
 
 class CoinDetails {
-    constructor(coin,price , rank, symbol,image,link,marketCap,fullyDilutedMarketCap,volume24hr,volumebyMarketCap,circulatingSupply,highLow24hr,maxSupply,totalSupply) {
+    constructor(coin,price , rank, symbol,image,link,marketCap,volume24hr,circulatingSupply,highLow24hr,maxSupply) {
         this.coin = coin;
         this.price = price;
         this.rank = rank;
@@ -45,13 +45,10 @@ class CoinDetails {
         this.image = image;
         this.link = link;
         this.marketCap = marketCap;
-        this.fullyDilutedMarketCap = fullyDilutedMarketCap;
         this.volume24hr = volume24hr;
-        this.volumebyMarketCap = volumebyMarketCap;
         this.circulatingSupply = circulatingSupply;
-        this.highLow24hr = highLow24hr;
+        // this.highLow24hr = highLow24hr;
         this.maxSupply = maxSupply;
-        this.totalSupply = totalSupply;
     }
 }
 
