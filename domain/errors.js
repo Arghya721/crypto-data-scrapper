@@ -53,6 +53,11 @@ let coinNotFoundError = {
     "message": "Coin not found"
 }
 
+let cryptoListError = {
+    "code": "cryptoListError",
+    "message": "Error comming from crypto list"
+}
+
 module.exports = {
     bitcoinNewsError,
     coinDeskNewsError,
@@ -64,5 +69,6 @@ module.exports = {
     newsUsecaseError,
     coinListUsecaseError,
     topLosersGainersUsecaseError,
-    coinNotFoundError
+    coinNotFoundError,
+    cryptoListError
 }

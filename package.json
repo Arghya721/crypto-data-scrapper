@@ -2,12 +2,18 @@
   "name": "crypto-data-scrapper",
   "version": "1.0.0",
   "description": "",
+  "scripts": {
+    "start": "node app.js",
+    "build-swagger": "node ./docs/swagger.js"
+  },
   "dependencies": {
     "axios": "^0.27.2",
     "cheerio": "^1.0.0-rc.12",
     "dotenv": "^16.0.2",
     "express": "^4.17.1",
     "serverless-http": "^2.7.0",
-    "superagent": "^8.0.0"
+    "superagent": "^8.0.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
   }
 }
