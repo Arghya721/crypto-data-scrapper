@@ -1,106 +1,47 @@
-<!--
-title: 'Serverless Framework Node Express API on AWS'
-description: 'This template demonstrates how to develop and deploy a simple Node Express API running on AWS Lambda using the traditional Serverless Framework.'
-layout: Doc
-framework: v3
-platform: AWS
-language: nodeJS
-priority: 1
-authorLink: 'https://github.com/serverless'
-authorName: 'Serverless, inc.'
-authorAvatar: 'https://avatars1.githubusercontent.com/u/13742415?s=200&v=4'
--->
+# Crypto Data API
 
-# Serverless Framework Node Express API on AWS
+![Project Logo](https://imagestorage71.s3.amazonaws.com/crypto.jpg)
 
-This template demonstrates how to develop and deploy a simple Node Express API service running on AWS Lambda using the traditional Serverless Framework.
+Crypto Data API is a RESTful API that provides access to cryptocurrency data, including coin details, news articles, top gainers and losers, and more.
 
-## Anatomy of the template
+## Table of Contents
 
-This template configures a single function, `api`, which is responsible for handling all incoming requests thanks to the `httpApi` event. To learn more about `httpApi` event configuration options, please refer to [httpApi event docs](https://www.serverless.com/framework/docs/providers/aws/events/http-api/). As the event is configured in a way to accept all incoming requests, `express` framework is responsible for routing and handling requests internally. Implementation takes advantage of `serverless-http` package, which allows you to wrap existing `express` applications. To learn more about `serverless-http`, please refer to corresponding [GitHub repository](https://github.com/dougmoscrop/serverless-http).
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Contributing](#contributing)
+
+## Features
+
+- Get details of a specific coin
+- Retrieve news articles related to cryptocurrencies
+- Get the list of top gainers and losers
+- Get list of top 100 coins
+
+## Installation
+
+1. Clone the repository: `git clone https://github.com/your-username/crypto-data-api.git`
+2. Install dependencies: `npm install`
+3. Configure the API settings and API keys in the appropriate configuration file.
+4. Start the server: `npm start`
 
 ## Usage
 
-### Deployment
+To use the Crypto Data API, send HTTP requests to the appropriate endpoints as described below.
 
-Install dependencies with:
+## API Endpoints
 
-```
-npm install
-```
+To explore the API endpoints and their detailed descriptions, follow these steps:
 
-and then deploy with:
+1. Start the server by running the command: `npm start`.
+2. Once the server is running, open your web browser.
+3. Visit [http://localhost:3000/api-docs](http://localhost:3000/api-docs) to access the Swagger documentation.
+4. The Swagger documentation provides comprehensive information about each API endpoint, including descriptions, request parameters, and example responses.
 
-```
-serverless deploy
-```
+Make sure to have the server running before accessing the Swagger documentation. If the server is running on a different port or URL, replace `localhost:3000` with the appropriate URL where your API is hosted.
 
-After running deploy, you should see output similar to:
 
-```bash
-Deploying aws-node-express-api-project to stage dev (us-east-1)
+## Contributing
 
-✔ Service deployed to stack aws-node-express-api-project-dev (196s)
-
-endpoint: ANY - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com
-functions:
-  api: aws-node-express-api-project-dev-api (766 kB)
-```
-
-_Note_: In current form, after deployment, your API is public and can be invoked by anyone. For production deployments, you might want to configure an authorizer. For details on how to do that, refer to [`httpApi` event docs](https://www.serverless.com/framework/docs/providers/aws/events/http-api/).
-
-### Invocation
-
-After successful deployment, you can call the created application via HTTP:
-
-```bash
-curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/
-```
-
-Which should result in the following response:
-
-```
-{"message":"Hello from root!"}
-```
-
-Calling the `/hello` path with:
-
-```bash
-curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/hello
-```
-
-Should result in the following response:
-
-```bash
-{"message":"Hello from path!"}
-```
-
-If you try to invoke a path or method that does not have a configured handler, e.g. with:
-
-```bash
-curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/nonexistent
-```
-
-You should receive the following response:
-
-```bash
-{"error":"Not Found"}
-```
-
-### Local development
-
-It is also possible to emulate API Gateway and Lambda locally by using `serverless-offline` plugin. In order to do that, execute the following command:
-
-```bash
-serverless plugin install -n serverless-offline
-```
-
-It will add the `serverless-offline` plugin to `devDependencies` in `package.json` file as well as will add it to `plugins` in `serverless.yml`.
-
-After installation, you can start local emulation with:
-
-```
-serverless offline
-```
-
-To learn more about the capabilities of `serverless-offline`, please refer to its [GitHub repository](https://github.com/dherault/serverless-offline).
+Contributions to the Crypto Data API are welcome! If you find any issues or have suggestions for improvement, please feel free to submit a pull request or open an issue in the repository.

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "node app.js",
+    "start": "node handler.js",
     "build-swagger": "node ./docs/swagger.js"
   },
   "dependencies": {
