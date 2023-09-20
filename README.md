@@ -1,6 +1,6 @@
 # Crypto Data API
 
-![Project Logo](https://imagestorage71.s3.amazonaws.com/crypto.jpg)
+![Project Logo](https://doctorimage.s3.amazonaws.com/crypto.jpg)
 
 Crypto Data API is a RESTful API that provides access to cryptocurrency data, including coin details, news articles, top gainers and losers, and more.
 
